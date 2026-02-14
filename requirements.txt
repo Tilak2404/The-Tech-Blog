@@ -47,3 +47,4 @@ virtualenv==20.34.0
 Werkzeug==3.1.4
 whitenoise==6.11.0
 WTForms==3.2.1
+gunicorn
