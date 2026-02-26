@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" style="background: #f8fafc;">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TechTalk</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <style>
-          @media (max-width: 768px) {
-            .tt-header {
-              padding: 10px 0 !important;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTalk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+      @media (max-width: 768px) {
+        .tt-header {
+          padding: 10px 0 !important;
+        }
 
-            .tt-nav {
-              padding: 0 16px !important;
-              flex-direction: column !important;
-              align-items: flex-start !important;
-              gap: 10px !important;
-            }
+        .tt-nav {
+          padding: 0 16px !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 10px !important;
+        }
 
-            .tt-brand {
-              width: 100%;
-              display: flex;
-              justify-content: flex-start;
-            }
+        .tt-brand {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+        }
 
-            .tt-brand-text {
-              font-size: 18px !important;
-            }
+        .tt-brand-text {
+          font-size: 18px !important;
+        }
 
-            .tt-nav-links {
-              width: 100% !important;
-              justify-content: flex-start !important;
-              gap: 12px !important;
-              row-gap: 8px !important;
-              flex-wrap: wrap !important;
-            }
+        .tt-nav-links {
+          width: 100% !important;
+          justify-content: flex-start !important;
+          gap: 12px !important;
+          row-gap: 8px !important;
+          flex-wrap: wrap !important;
+        }
 
-            .tt-link {
-              font-size: 12px !important;
-            }
+        .tt-link {
+          font-size: 12px !important;
+        }
 
-            .tt-cta {
-              font-size: 12px !important;
-              padding: 6px 12px !important;
-            }
+        .tt-cta {
+          font-size: 12px !important;
+          padding: 6px 12px !important;
+        }
 
-            .tt-container {
-              padding-top: 120px !important;
-            }
-          }
+        .tt-container {
+          padding-top: 120px !important;
+        }
+      }
 
-          @media (max-width: 480px) {
-            .tt-nav {
-              align-items: center !important;
-            }
+      @media (max-width: 480px) {
+        .tt-nav {
+          align-items: center !important;
+        }
 
-            .tt-brand {
-              justify-content: center !important;
-            }
+        .tt-brand {
+          justify-content: center !important;
+        }
 
-            .tt-nav-links {
-              justify-content: center !important;
-            }
-          }
-        </style>
-    </head>
+        .tt-nav-links {
+          justify-content: center !important;
+        }
+      }
+    </style>
+</head>
 <body style="margin: 0; font-family: 'Sora', 'Segoe UI', sans-serif; background: #f8fafc; color: #0f172a;">
-    <header
-      class="tt-header"
+<header
+  class="tt-header"
   style="
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0b1120 100%);
     border-bottom: 1px solid rgba(148,163,184,0.25);
@@ -84,60 +84,60 @@
     box-shadow: 0 12px 30px rgba(15,23,42,0.35);
   "
 >
-      <nav
-        class="tt-nav"
+  <nav
+    class="tt-nav"
+    style="
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    "
+  >
+    <!-- LOGO -->
+    <div class="tt-brand">
+      <a
+        href="{{url_for('core.index')}}"
         style="
-          width: 100%;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 24px;
+          font-size: 20px;
+          font-weight: 800;
+          color: #f8fafc;
+          text-decoration: none;
           display: flex;
-          justify-content: space-between;
           align-items: center;
+          gap: 10px;
+          letter-spacing: -0.01em;
         "
       >
-        <!-- LOGO -->
-        <div class="tt-brand">
-          <a
-            href="{{url_for('core.index')}}"
-            style="
-              font-size: 20px;
-              font-weight: 800;
-              color: #f8fafc;
-              text-decoration: none;
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              letter-spacing: -0.01em;
-            "
-          >
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M2 17L12 22L22 17" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M2 12L12 17L22 12" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="tt-brand-text">TechTalk</span>
-          </a>
-        </div>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="tt-brand-text">TechTalk</span>
+      </a>
+    </div>
 
-        <!-- NAV LINKS -->
-        <div
-          class="tt-nav-links"
-          style="
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-          "
-        >
-          <a
-            href="{{url_for('core.index')}}"
-            class="tt-link"
-            style="
-              font-size: 14px;
-              font-weight: 600;
-              color: #e2e8f0;
+    <!-- NAV LINKS -->
+    <div
+      class="tt-nav-links"
+      style="
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      "
+    >
+      <a
+        href="{{url_for('core.index')}}"
+        class="tt-link"
+        style="
+          font-size: 14px;
+          font-weight: 600;
+          color: #e2e8f0;
           text-decoration: none;
           opacity: 0.9;
           transition: color 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
@@ -147,13 +147,13 @@
       >
         Home
       </a>
-          <a
-            href="{{url_for('core.info')}}"
-            class="tt-link"
-            style="
-              font-size: 14px;
-              font-weight: 600;
-              color: #e2e8f0;
+      <a
+        href="{{url_for('core.info')}}"
+        class="tt-link"
+        style="
+          font-size: 14px;
+          font-weight: 600;
+          color: #e2e8f0;
           text-decoration: none;
           opacity: 0.9;
           transition: color 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
@@ -164,13 +164,13 @@
         About
       </a>
       {% if current_user.is_authenticated%}
-          <a
-            href="{{url_for('users.account')}}"
-            class="tt-link"
-            style="
-              font-size: 14px;
-              font-weight: 600;
-              color: #e2e8f0;
+      <a
+        href="{{url_for('users.account')}}"
+        class="tt-link"
+        style="
+          font-size: 14px;
+          font-weight: 600;
+          color: #e2e8f0;
           text-decoration: none;
           opacity: 0.9;
           transition: color 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
@@ -180,13 +180,13 @@
       >
         Account
       </a>
-          <a
-            href="{{url_for('blogposts.create_post')}}"
-            class="tt-link"
-            style="
-              font-size: 14px;
-              font-weight: 600;
-              color: #e2e8f0;
+      <a
+        href="{{url_for('blogposts.create_post')}}"
+        class="tt-link"
+        style="
+          font-size: 14px;
+          font-weight: 600;
+          color: #e2e8f0;
           text-decoration: none;
           opacity: 0.9;
           transition: color 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
@@ -198,13 +198,13 @@
       </a>
 
       <!-- LOG OUT -->
-          <a
-            href="{{url_for('users.logout')}}"
-            class="tt-cta"
-            style="
-              padding: 8px 16px;
-              border-radius: 12px;
-              background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(239,68,68,0.35));
+      <a
+        href="{{url_for('users.logout')}}"
+        class="tt-cta"
+        style="
+          padding: 8px 16px;
+          border-radius: 12px;
+          background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(239,68,68,0.35));
           color: #fecaca;
           font-size: 13px;
           font-weight: 700;
@@ -216,13 +216,13 @@
         Log Out
       </a>
       {%else%}
-          <a
-            href="{{url_for('users.register')}}"
-            class="tt-link"
-            style="
-              font-size: 14px;
-              font-weight: 600;
-              color: #e2e8f0;
+      <a
+        href="{{url_for('users.register')}}"
+        class="tt-link"
+        style="
+          font-size: 14px;
+          font-weight: 600;
+          color: #e2e8f0;
           text-decoration: none;
           opacity: 0.9;
           transition: color 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
@@ -232,13 +232,13 @@
       >
         Register
       </a>
-          <a
-            href="{{url_for('users.login')}}"
-            class="tt-cta"
-            style="
-              padding: 8px 16px;
-              border-radius: 12px;
-              background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      <a
+        href="{{url_for('users.login')}}"
+        class="tt-cta"
+        style="
+          padding: 8px 16px;
+          border-radius: 12px;
+          background: linear-gradient(135deg, #2563eb, #1d4ed8);
           color: #ffffff;
           font-size: 13px;
           font-weight: 700;
@@ -252,12 +252,12 @@
     </div>
   </nav>
 </header>
-</body>
-    <div class="container tt-container" style="padding-top: 84px; padding-bottom: 40px;">
+<div class="container tt-container" style="padding-top: 84px; padding-bottom: 40px;">
 
 
 {%block content%}
 
 {%endblock%}
 </div>
+</body>
 </html>
