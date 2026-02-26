@@ -20,11 +20,13 @@ class RegistrationForm(FlaskForm):
     submit=SubmitField('Create Account')
 
     def validate_email(self,field):
-        if User.query.filter_by(email=field.data).first() and field.data != current_user.email:
+        existing = User.query.filter_by(email=field.data).first()
+        if existing and (not current_user.is_authenticated or field.data != current_user.email):
             raise ValidationError('Your email has already been registered')
 
     def validate_username(self,field):
-        if User.query.filter_by(username=field.data).first() and field.data != current_user.username:
+        existing = User.query.filter_by(username=field.data).first()
+        if existing and (not current_user.is_authenticated or field.data != current_user.username):
             raise ValidationError('Your username has already been registered')
         
 class UpdateUserForm(FlaskForm):
@@ -34,10 +36,12 @@ class UpdateUserForm(FlaskForm):
     submit=SubmitField('Update')
 
     def validate_email(self,field):
-        if User.query.filter_by(email=field.data).first() and field.data != current_user.email:
+        existing = User.query.filter_by(email=field.data).first()
+        if existing and (not current_user.is_authenticated or field.data != current_user.email):
             raise ValidationError('Your email has already been registered')
 
     def validate_username(self,field):
-        if User.query.filter_by(username=field.data).first() and field.data != current_user.username:
+        existing = User.query.filter_by(username=field.data).first()
+        if existing and (not current_user.is_authenticated or field.data != current_user.username):
             raise ValidationError('Your username has already been registered')
     

@@ -4,30 +4,75 @@
 <!-- HOME HERO -->
 <section
   style="
-    padding: 45px 20px 20px;
+    padding: 20px 20px 42px;
     text-align: center;
-     background:
-    linear-gradient(180deg, rgba(31, 104, 222, 0.674) 0%, transparent 45%),
-    #1781ea;
-"
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(700px circle at 15% -20%, rgba(255,255,255,0.4), transparent 55%),
+      radial-gradient(600px circle at 85% 0%, rgba(59,130,246,0.45), transparent 60%),
+      linear-gradient(0deg, #1e3a8a 0%, #2563eb 45%, #60a5fa 75%, #f8fafc 100%);
+  "
 >
+  <div
+    style="
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.25);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    "
+  >
+    <span
+      style="
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 14px rgba(34,197,94,0.6);
+      "
+    ></span>
+    Fresh drops
+  </div>
+
   <h1
     style="
       margin: 0;
-      font-size: 36px;
+      font-size: 38px;
       font-weight: 900;
-      color: #0f172a;
+      color: #f8fafc;
       letter-spacing: -0.02em;
+      text-shadow: 0 8px 24px rgba(15,23,42,0.25);
     "
   >
-    Discover what's new on TechTalk
+    Discover what's new on
+    <span
+      style="
+        display: inline-block;
+        background: linear-gradient(90deg, #fef3c7, #ffffff);
+        -webkit-background-clip: text;
+        color: transparent;
+      "
+    >
+      TechTalk
+    </span>
   </h1>
 
   <p
     style="
-      margin-top: 12px;
+      margin: 14px auto 0;
+      max-width: 520px;
       font-size: 16px;
-      color: #000000;
+      color: rgba(248,250,252,0.9);
     "
   >
     Fresh insights, product launches, and tech stories
@@ -37,7 +82,7 @@
 <!-- BLOG GRID -->
 <section
   style="
-    padding: 20px 20px 5px;
+    padding: 24px 20px 5px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
@@ -48,11 +93,14 @@
 {%for post in blog_posts.items%}
   <div
     style="
-      background: #ffffff;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       border-radius: 22px;
-      padding: 18px 30px 20px;
+      padding: 18px 30px 22px;
+      border: 1px solid rgba(226,232,240,0.7);
       box-shadow: 0 25px 50px rgba(15,23,42,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     "
     onmouseover="
       this.style.transform='translateY(-6px)';
@@ -63,6 +111,16 @@
       this.style.boxShadow='0 25px 50px rgba(15,23,42,0.08)';
     "
   >
+    <div
+      style="
+        height: 4px;
+        width: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #2563eb, #22d3ee, #60a5fa);
+        margin-bottom: 14px;
+      "
+    ></div>
+
     <!-- BADGE -->
     {% if post.date > new_threshold %}
     <div
@@ -76,6 +134,7 @@
         text-transform: uppercase;
         color: #1d4ed8;
         background: rgba(37,99,235,0.12);
+        border: 1px solid rgba(37,99,235,0.2);
         border-radius: 999px;
       "
     >
@@ -94,6 +153,7 @@
         line-height: 1.3;
         display: block;
         transition: color 0.25s ease;
+        letter-spacing: -0.01em;
       "
       onmouseover="this.style.color='#2563eb';"
       onmouseout="this.style.color='#0f172a';"
@@ -102,7 +162,7 @@
     </a>
 
     <!-- META -->
-    <div style="margin-top: 10px; font-size: 13px; color: #64748b;">
+    <div style="margin-top: 10px; font-size: 12px; color: #94a3b8; letter-spacing: 0.02em;">
       Written by
       <a
         href="{{url_for('users.user_posts',username=post.author.username)}}"
@@ -116,7 +176,7 @@
       >
         {{post.author.username}}
       </a>
-      · <span style="color:#94a3b8;">{{post.date.strftime('%b %d, %Y')}}</span>
+      &middot; <span style="color:#94a3b8;">{{post.date.strftime('%b %d, %Y')}}</span>
     </div>
 
     <!-- ACCENT -->
@@ -139,24 +199,24 @@
         gap: 6px;
         padding: 10px 18px;
         border-radius: 14px;
-        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        background: linear-gradient(135deg, #2563eb, #1e40af);
         color: #ffffff;
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
-        box-shadow: 0 12px 26px rgba(37,99,235,0.35);
+        box-shadow: 0 12px 26px rgba(30,64,175,0.4);
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       "
       onmouseover="
         this.style.transform='translateY(-2px)';
-        this.style.boxShadow='0 18px 40px rgba(37,99,235,0.45)';
+        this.style.boxShadow='0 18px 40px rgba(30,64,175,0.45)';
       "
       onmouseout="
         this.style.transform='translateY(0)';
-        this.style.boxShadow='0 12px 26px rgba(37,99,235,0.35)';
+        this.style.boxShadow='0 12px 26px rgba(30,64,175,0.4)';
       "
     >
-      Read blog post →
+      Read blog post &rarr;
     </a>
   </div>
 {%endfor%}

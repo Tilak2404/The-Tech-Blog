@@ -8,6 +8,8 @@ app=Flask(__name__)
 
 ###############DATABASE SETUP###########
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key')
+if app.config['SECRET_KEY'] == 'dev-secret-key':
+    app.logger.warning("SECRET_KEY not set; using insecure default.")
 basedir=os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///'+os.path.join(basedir,'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False

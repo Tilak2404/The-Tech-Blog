@@ -11,10 +11,10 @@ def load_user(user_id):
 class User(db.Model, UserMixin):
     __tablename__='users'
     id=db.Column(db.Integer,primary_key=True)
-    profile_image=db.Column(db.String(20),nullable=False,default='default_profile.jpg')
-    email=db.Column(db.String(64),unique=True,index=True)
-    username=db.Column(db.String(64),unique=True,index=True)
-    password_hash=db.Column(db.String(128))
+    profile_image=db.Column(db.String(128),nullable=False,default='default_profile.jpg')
+    email=db.Column(db.String(64),unique=True,index=True,nullable=False)
+    username=db.Column(db.String(64),unique=True,index=True,nullable=False)
+    password_hash=db.Column(db.String(128),nullable=False)
     posts=db.relationship('Blogpost',backref='author',lazy=True)
 
     def __init__(self,email,username,password):
@@ -33,8 +33,6 @@ class User(db.Model, UserMixin):
         return f" Username : {self.username}"
 
 class Blogpost(db.Model):
-
-    users=db.relationship(User, overlaps="author,posts")
 
     id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)

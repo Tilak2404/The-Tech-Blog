@@ -1,17 +1,29 @@
 import os
 from PIL import Image
-from flask import url_for,current_app
+from werkzeug.utils import secure_filename
+from flask import current_app
 
 def add_profile_pic(pic_upload,username):
     try:
-        filename=pic_upload.filename
-        ext_type=filename.rsplit('.', 1)[1].lower()
-        storage_filename=str(username)+'.'+ext_type
-        filepath=os.path.join(current_app.root_path,'static','profile_pics',storage_filename)
+        filename = secure_filename(pic_upload.filename or "")
+        if not filename:
+            return None
 
-        output_size=(200,200)
+        _, ext_type = os.path.splitext(filename)
+        ext_type = ext_type.lower()
+        if not ext_type:
+            return None
 
-        pic=Image.open(pic_upload)
+        safe_username = secure_filename(str(username))
+        if not safe_username:
+            return None
+
+        storage_filename = f"{safe_username}{ext_type}"
+        filepath = os.path.join(current_app.root_path,'static','profile_pics',storage_filename)
+
+        output_size = (200,200)
+
+        pic = Image.open(pic_upload)
         pic.thumbnail(output_size)
         pic.save(filepath)
 

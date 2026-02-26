@@ -46,7 +46,7 @@ def update(blog_post_id):
     
     return render_template('create_post.html',title='Updating',form=form)
 
-@blogposts.route('/<int:blog_post_id>/delete',methods=['GET','POST'])
+@blogposts.route('/<int:blog_post_id>/delete',methods=['POST'])
 @login_required
 def delete_post(blog_post_id):
     blog_post=Blogpost.query.get_or_404(blog_post_id)

@@ -1,6 +1,58 @@
 {% extends "base.html"%}
 {% block content%}
-<div style="text-align: center; text-decoration: wavy;font-weight:bolder;padding: 28%;" class="jumbotron">
-    <h1>404 PAGE NOT FOUND!</h1>
-</div>
+<section
+  style="
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background:
+      radial-gradient(800px circle at top, rgba(59,130,246,0.18), transparent 45%),
+      linear-gradient(180deg, #f8fafc, #ffffff);
+  "
+>
+  <div
+    style="
+      text-align: center;
+      max-width: 520px;
+      background: rgba(255,255,255,0.96);
+      border-radius: 24px;
+      padding: 48px 36px;
+      border: 1px solid rgba(226,232,240,0.8);
+      box-shadow: 0 30px 60px rgba(15,23,42,0.12);
+    "
+  >
+    <div
+      style="
+        font-size: 72px;
+        font-weight: 900;
+        color: #1d4ed8;
+        letter-spacing: -0.04em;
+      "
+    >
+      404
+    </div>
+    <h1 style="margin: 10px 0 0; font-size: 22px; color: #0f172a;">Page not found</h1>
+    <p style="margin-top: 10px; font-size: 15px; color: #64748b;">
+      The page you are looking for doesn?t exist or has been moved.
+    </p>
+    <a
+      href="{{url_for('core.index')}}"
+      style="
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 18px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 12px 24px rgba(37,99,235,0.35);
+      "
+    >
+      Back to Home
+    </a>
+  </div>
+</section>
 {%endblock%}

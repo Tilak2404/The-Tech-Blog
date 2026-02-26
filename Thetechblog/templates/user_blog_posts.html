@@ -2,10 +2,33 @@
 {%block content%}
 <section
   style="
-    padding: 48px 20px 32px;
+    padding: 56px 20px 32px;
     text-align: center;
+    background:
+      radial-gradient(700px circle at top, rgba(59,130,246,0.12), transparent 45%),
+      linear-gradient(180deg, #f8fafc, #ffffff);
+    border-radius: 22px;
   "
 >
+  <div
+    style="
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.12);
+      color: #1d4ed8;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    "
+  >
+    Author
+  </div>
+
   <img
     src="{{url_for('static',filename='profile_pics/'+user.profile_image)}}"
     alt="Author"
@@ -16,13 +39,14 @@
       object-fit: cover;
       box-shadow: 0 12px 30px rgba(15,23,42,0.2);
       margin-bottom: 16px;
+      border: 4px solid #ffffff;
     "
   />
 
   <h1
     style="
       margin: 0;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 800;
       color: #0f172a;
     "
@@ -32,25 +56,38 @@
 
   <p
     style="
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 14px;
       color: #64748b;
     "
   >
     Posts by this author
   </p>
+
+  <div
+    style="
+      height: 3px;
+      width: 52px;
+      margin: 18px auto 0;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 999px;
+    "
+  ></div>
 </section>
 
 {% for post in blog_posts.items %}
 <div
   style="
     max-width: 900px;
-    margin: 0 auto 28px;
-    background: #ffffff;
+    margin: 26px auto 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     border-radius: 18px;
     padding: 28px 32px;
+    border: 1px solid rgba(226,232,240,0.8);
     box-shadow: 0 14px 32px rgba(15,23,42,0.08);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
   "
   onmouseover="
     this.style.boxShadow='0 30px 70px rgba(59,130,246,0.35)';
@@ -61,6 +98,16 @@
     this.style.transform='translateY(0)';
   "
 >
+  <div
+    style="
+      height: 4px;
+      width: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2563eb, #22d3ee, #60a5fa);
+      margin-bottom: 16px;
+    "
+  ></div>
+
   <!-- Post title -->
   <a
     href="{{url_for('blogposts.blog_post',blog_post_id=post.id)}}"
@@ -78,8 +125,9 @@
   <div
     style="
       margin-top: 8px;
-      font-size: 13px;
-      color: #64748b;
+      font-size: 12px;
+      color: #94a3b8;
+      letter-spacing: 0.02em;
     "
   >
     Published on {{post.date.strftime('%Y-%m-%d')}}
@@ -109,7 +157,7 @@
       text-decoration: none;
     "
   >
-    Read full post →
+    Read full post &rarr;
   </a>
 </div>
 {% endfor %}
